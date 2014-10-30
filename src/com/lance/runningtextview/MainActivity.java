@@ -2,6 +2,7 @@ package com.lance.runningtextview;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,7 +49,8 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 		case R.id.btplay:
 			// 播放数字动画
 			String temp = mEdit.getText().toString();
-			if (!temp.equals("") || !(temp == null)) {
+			Log.v("temp:", temp);
+			if(!temp.equals("")){
 				double number = Double.parseDouble(temp);
 				mRunningtextview.playNumber(number);
 			}

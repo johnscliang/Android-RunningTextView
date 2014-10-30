@@ -71,7 +71,7 @@ public class RunningTextView extends TextView {
 				RunningTextView.this.setText(formater.format(nowNumber)
 						.toString());// 更新显示的数字
 				nowNumber += Double.parseDouble(msg.obj.toString());// 跳跃arg1那么多的数字间隔
-				Log.v("nowNumber增加之后的值", nowNumber + "");
+//				Log.v("nowNumber增加之后的值", nowNumber + "");
 				//
 				if (nowNumber < content) {
 					Message msg2 = handler.obtainMessage();
@@ -103,7 +103,7 @@ public class RunningTextView extends TextView {
 				Message msg = handler.obtainMessage();
 				double temp = content / frames;
 				msg.obj = temp < 0.01 ? 0.01 : temp;// 如果每帧的间隔比1小，就设置为1
-				Log.v("每帧跳跃的数量：", "" + msg.obj.toString());
+//				Log.v("每帧跳跃的数量：", "" + msg.obj.toString());
 				handler.sendMessage(msg);// 发送通知改变UI
 			}
 		});
